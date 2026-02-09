@@ -48,6 +48,11 @@ def formatar_duracao(segundos: float) -> str:
     if hh > 0:
         return f"{hh:02d}:{mm:02d}:{ss:02d}"
     return f"{mm:02d}:{ss:02d}"
+    
+def resource_path(relative_path: str) -> str:
+    """Resolve paths in dev and when bundled by PyInstaller."""
+    base = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base, relative_path)
 
 
 def abrir_pasta_no_sistema(pasta: str) -> None:
@@ -83,12 +88,12 @@ class TimeLapseApp(QMainWindow):
 
         # Carrega a interface criada no Qt Designer.
         # (camera.ui deve estar na mesma pasta do .py)
-        uic.loadUi("camera.ui", self)
+        uic.loadUi(resource_path("camera.ui"), self)
 
         # Define o ícone da janela (caminho absoluto)
         from PyQt5.QtGui import QIcon
         BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-        self.setWindowIcon(QIcon(os.path.join(BASE_DIR, "icone.png")))
+        self.setWindowIcon(QIcon(resource_path("icone.png")))
 
         # =============================
         # ESTADO / VARIÁVEIS DE CONTROLE
@@ -496,7 +501,7 @@ class TimeLapseApp(QMainWindow):
         ]
 
         self.ffmpeg_process.setWorkingDirectory(self.pasta_execucao)
-        self.ffmpeg_process.start("ffmpeg", args)
+        self.ffmpeg_process.start(resource_path("ffmpeg.exe"), args)
         self.statusbar.showMessage("Gerando vídeo...")
 
     def video_finalizado(self, exitCode, exitStatus):
