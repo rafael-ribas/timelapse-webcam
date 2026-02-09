@@ -5,6 +5,8 @@
 ![Platform](https://img.shields.io/badge/Platform-Windows-blue)
 ![UI](https://img.shields.io/badge/UI-PyQt5-green)
 ![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green)
+![Release](https://img.shields.io/github/v/release/rafael-ribas/timelapse-webcam)
+
 
 Aplicação desktop em `Python` para captura de imagens em intervalos configuráveis a partir de webcams, com geração automática de vídeos em formato timelapse.
 
@@ -154,4 +156,5 @@ icone.png
 
 ## Licença
 - Este projeto está licenciado sob a Licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
+
 
