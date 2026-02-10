@@ -147,7 +147,6 @@ icone.png
 
 ## Próximos passos
 
-- Empacotamento em .exe (PyInstaller)
 - Presets de timelapse (ex: pôr do sol, construção, plantas)
 - Adicionar opção para configurar a resolução de captura da câmera
 - Logs de execução opcionais
@@ -156,5 +155,6 @@ icone.png
 
 ## Licença
 - Este projeto está licenciado sob a Licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
+
 
 
